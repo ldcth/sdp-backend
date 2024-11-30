@@ -7,6 +7,9 @@ from .links import bp as links_bp
 from .model import bp as model_bp
 from .settings import bp as settings_bp
 from .user import bp as user_bp
+from .general import bp as general_bp
+from .finetune import bp as finetune_bp
+
 
 all_blueprints = [
     auth_bp,
@@ -16,7 +19,9 @@ all_blueprints = [
     links_bp,
     model_bp,
     settings_bp,
-    user_bp
+    user_bp,
+    general_bp,
+    finetune_bp
 ]
 
 def init_app(app):
