@@ -4,10 +4,13 @@ from database.links import Links
 from database.answers import Answers
 from services.crawl import Test_Chitiet_HTML
 import math
+from flask_jwt_extended import jwt_required
 bp = Blueprint('links', __name__, url_prefix='/api/links')
 
 @bp.get('/')
+@jwt_required()
 def get_links():
+    print(1)
     page = int(request.args.get('page', 0))
     per_page = int(request.args.get('per_page', 0))
     res = Links()

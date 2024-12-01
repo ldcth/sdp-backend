@@ -4,7 +4,7 @@ import requests
 def testModel():
 
     API_URL = "https://api-inference.huggingface.co/models/PB7-DUT-2023/finetuned_Bloomz_1b1_v1"
-    headers = {"Authorization": "Bearer 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"}
+    headers = {"Authorization": "Bearer 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"}
 
     response = requests.post(API_URL, headers=headers, json={
         "inputs": """###QUESTION: Công nghiệp văn hóa Việt Nam bao gồm ngành nào sau đây?
@@ -39,7 +39,7 @@ def model_api(question, answers, version=1):
 
     headers = {
         "Accept": "application/json",
-        "Authorization": "Bearer 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",
+        "Authorization": "Bearer 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",
         "Content-Type": "application/json"
     }
 

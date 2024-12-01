@@ -4,6 +4,7 @@ import json
 from bson import ObjectId
 from datetime import datetime, timedelta
 from flask import jsonify
+from flask_cors import cross_origin
 
 
 db = database['links']
@@ -38,6 +39,7 @@ class Links:
             return None
 
     @staticmethod
+    @cross_origin()
     def get_all_links(page=None, per_page=None):
         try:
             if page and per_page:
@@ -58,6 +60,7 @@ class Links:
                     return None
             else:
                 result = db.find({}).sort([('createdAt', -1)])
+                print(result)
                 if result:
                     result = list(result)
                     for item in result:
@@ -167,6 +170,7 @@ class Links:
             return None
         
     @staticmethod
+    @cross_origin()
     def get_lated_data():
         try:
             result = db.find({}).sort([('createdAt', -1)]).skip(0).limit(50)

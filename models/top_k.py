@@ -14,7 +14,7 @@ from tqdm.notebook import tqdm
 from rank_bm25 import BM25Okapi
 
 def load_data():
-    notebook_login("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")
+    notebook_login("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")
     dataset_doc = load_dataset(
         "PB7-DUT-2023/Document_History_Embedding",  split="train")
     # df_dataset_doc = dataset_doc['train'].to_pandas()
@@ -26,7 +26,7 @@ def load_data():
         document.save_to_db()
 
 def get_top_k(question, topk =10):
-    notebook_login("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")
+    notebook_login("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")
     dataset_doc = load_dataset("PB7-DUT-2023/Document_History_Embedding")
     df_dataset_doc = dataset_doc['train'].to_pandas()
     df_dataset_doc_processed = pd.DataFrame(columns=['id', 'text_preprocessed_vietnamese', 'embedding','id_book'])

@@ -91,4 +91,4 @@ if __name__ == "__main__":
     # schedule.every(1).minutes.do(my_job)
     # schedule_t = threading.Thread(target=schedule_thread)
     # schedule_t.start()
-    app.run(debug=False, port=3001, host='0.0.0.0')
+    app.run(debug=True, port=3001, host='0.0.0.0')
